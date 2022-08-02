@@ -1,11 +1,20 @@
-import { useAppSelector } from '../../hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { getChars } from '../../redux/slices/asynkThunks/getChars';
+import { changeOffset } from '../../redux/slices/charSlice';
 import { Button } from '../Button';
 import { ButtonBlock } from '../ButtonBlock';
 import { CharItem } from '../CharItem';
 import { GridBlock } from '../GridBlock';
 
 export const CharList = () => {
-  const dataChars = useAppSelector((state) => state.char.dataChar);
+  const { dataChar, offset } = useAppSelector((state) => state.char);
+  const dispatch = useAppDispatch();
+
+  const handleClick = (offSet: number) => {
+    dispatch(changeOffset());
+    const offSetStr = offSet.toString();
+    dispatch(getChars(offSetStr));
+  };
   return (
     <div>
       <GridBlock
@@ -14,12 +23,12 @@ export const CharList = () => {
         col_gap="25px"
         row_gap="30px"
         auto_rows="repeat(3, 318px)">
-        {dataChars.map(({ id, name, thumbnail }) => (
-          <CharItem key={id} name={name} thumbnail={thumbnail} />
+        {dataChar.map(({ id, name, thumbnail }) => (
+          <CharItem key={id} name={name} thumbnail={thumbnail} id={id} />
         ))}
       </GridBlock>
       <ButtonBlock>
-        <Button>LOAD MORE</Button>
+        <Button onClick={() => handleClick(offset)}>LOAD MORE</Button>
       </ButtonBlock>
     </div>
   );

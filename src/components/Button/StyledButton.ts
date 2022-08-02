@@ -1,16 +1,20 @@
 import styled from 'styled-components';
 import { main_color } from '../../common/variables';
 
-export const StyledButton = styled.a<{ bg_color?: string }>`
+export const StyledButton = styled.a<{ bg_color?: string; mb?: string }>`
   width: 101px;
   height: 38px;
+  margin-bottom: ${(props) => (props.mb ? props.mb : '')};
+
   div {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     background-color: ${(props) => (props.bg_color ? props.bg_color : main_color)};
+    border: transparent;
 
     color: #fff;
     width: 100%;

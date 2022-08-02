@@ -1,16 +1,20 @@
 import { FC } from 'react';
+import { useAppDispatch } from '../../hooks/hooks';
+import { getSelectedChar } from '../../redux/slices/charSlice';
 import { CharIcon } from './CharIcon';
 import { CharName } from './CharName';
 import { StyledCharItem } from './StyledCharItem';
 
 interface CharItemProps {
+  id: number;
   name: string;
   thumbnail: string;
 }
 
-export const CharItem: FC<CharItemProps> = ({ name, thumbnail }) => {
+export const CharItem: FC<CharItemProps> = ({ name, thumbnail, id }) => {
+  const dispatch = useAppDispatch();
   return (
-    <StyledCharItem>
+    <StyledCharItem onClick={() => dispatch(getSelectedChar(id))}>
       <CharIcon w="200px" h="200px">
         <img src={thumbnail} alt={name} />
       </CharIcon>
