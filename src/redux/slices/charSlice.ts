@@ -1,4 +1,4 @@
-import { createSlice, isAnyOf, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf, PayloadAction, Slice, SliceCaseReducers } from '@reduxjs/toolkit';
 import { _offSet } from '../../common/variables';
 import { getChar } from './asynkThunks/getChar';
 
@@ -12,7 +12,7 @@ export interface IComicsItem {
 export interface ICharItem {
   id: number;
   name: string;
-  description?: string;
+  description: string;
   thumbnail: string;
   homepage: string;
   wiki: string;
@@ -23,7 +23,7 @@ type loading = 'loading' | 'error' | 'success';
 export interface ICharState {
   dataChar: Array<ICharItem>;
   dataRandomChar: Array<ICharItem>;
-  selectedChar: ICharItem | null | undefined;
+  selectedChar: ICharItem | null;
   charsLoading: loading;
   randomCharLoading: loading;
   offset: number;
@@ -37,16 +37,16 @@ const initialState: ICharState = {
   randomCharLoading: 'loading',
   offset: _offSet,
 };
-
-export const CharSlice = createSlice({
+//----------------------------initialState-----state в reducers-------name: 'char'
+export const CharSlice: Slice<ICharState, SliceCaseReducers<ICharState>, string> = createSlice({
   name: 'char',
   initialState,
   reducers: {
-    changeOffset: (state) => {
-      state.offset = state.offset + 9;
+    changeOffset: (state, action: PayloadAction<number>) => {
+      state.offset = state.offset + action.payload;
     },
     getSelectedChar: (state, action: PayloadAction<number>) => {
-      state.selectedChar = state.dataChar.find((item) => item.id === action.payload);
+      state.selectedChar = state.dataChar.find((item) => item.id === action.payload) || null;
     },
   },
   extraReducers: (builder) => {

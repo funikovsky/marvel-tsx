@@ -4,32 +4,37 @@ interface CharsResponse {
   };
 }
 
+interface CharsUrlDetail {
+  type: 'detail';
+  url: string;
+}
+
+interface CharsUrlComicLink {
+  type: 'comiclink';
+  url: string;
+}
+
+export interface CharsComicsItem {
+  items: Array<{
+    resourceURI: string;
+    name: string;
+  }>;
+}
+
+type CharUrlItem = CharsUrlDetail | CharsUrlComicLink;
+interface CharsThumbnail {
+  path: string;
+  extension: string;
+}
+
 export interface CharsResponseItem {
   id: number;
   name: string;
   description?: string;
-  thumbnail: {
-    path: string;
-    extension: string;
-  };
-  urls: Array<
-    | {
-        type: 'detail';
-        url: string;
-      }
-    | {
-        type: 'comiclink';
-        url: string;
-      }
-  >;
-
+  thumbnail: CharsThumbnail;
+  urls: Array<CharUrlItem>;
   wiki: string;
-  comics: {
-    items: Array<{
-      resourceURI: string;
-      name: string;
-    }>;
-  };
+  comics: CharsComicsItem;
 }
 
 export interface ApiResponse {

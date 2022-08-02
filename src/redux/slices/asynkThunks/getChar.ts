@@ -8,9 +8,7 @@ export const getChar = createAsyncThunk<Array<ICharItem>, number, { rejectValue:
   async (id, { rejectWithValue }) => {
     try {
       const { data } = await Api.getCharItem(id);
-      const newRes: Array<ICharItem> = data.results.map(transformChar);
-
-      return newRes;
+      return data.results.map(transformChar);
     } catch (error: any) {
       return rejectWithValue(`Ошибка загрузки данных: ${error?.response?.status || 500}`);
     }

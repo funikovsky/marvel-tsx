@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { _defaultNumberChar } from '../common/variables';
 import { Container } from '../components/Cantainer';
 import { CharList } from '../components/CharList';
 import { DescrChar } from '../components/DescrChar';
@@ -12,7 +13,7 @@ export const MainPages = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(getChars());
-    dispatch(changeOffset());
+    dispatch(changeOffset(_defaultNumberChar));
   }, [dispatch]);
   return (
     <>

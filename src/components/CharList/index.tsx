@@ -1,3 +1,4 @@
+import { _defaultNumberChar } from '../../common/variables';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { getChars } from '../../redux/slices/asynkThunks/getChars';
 import { changeOffset } from '../../redux/slices/charSlice';
@@ -11,7 +12,7 @@ export const CharList = () => {
   const dispatch = useAppDispatch();
 
   const handleClick = (offSet: number) => {
-    dispatch(changeOffset());
+    dispatch(changeOffset(_defaultNumberChar));
     const offSetStr = offSet.toString();
     dispatch(getChars(offSetStr));
   };

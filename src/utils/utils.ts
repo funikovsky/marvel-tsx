@@ -3,7 +3,7 @@ import { CharsResponseItem } from '../api/types';
 export const transformChar = (char: CharsResponseItem) => ({
   id: char.id,
   name: char.name,
-  description: char.description,
+  description: char.description || '',
   thumbnail: char.thumbnail.path + '.' + char.thumbnail.extension,
   homepage: char.urls[0].url,
   wiki: char.urls[1].url,

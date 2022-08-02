@@ -8,7 +8,7 @@ import { StyledDescrChar } from './StyledDescrChar';
 
 export const DescrChar: FC = () => {
   const selectedChar = useAppSelector((state) => state.char.selectedChar);
-  if (selectedChar === undefined) return <SceletonCharDescr />;
+
   if (selectedChar === null) return <SceletonCharDescr />;
 
   const { comics } = selectedChar;
@@ -18,7 +18,7 @@ export const DescrChar: FC = () => {
       <DescrCharInfo />
       <TextBlock>
         <p>
-          {selectedChar!.description?.length === 0 ? 'No description' : selectedChar!.description}
+          {selectedChar.description?.length === 0 ? 'No description' : selectedChar.description}
         </p>
       </TextBlock>
       <ComicsList comics={comics} />
