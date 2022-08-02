@@ -2,6 +2,8 @@ import ContentLoader from 'react-content-loader';
 import styled from 'styled-components';
 
 const SceletonBlock = styled.div`
+  position: sticky;
+  top: 0;
   width: 425px;
   height: 763px;
   box-shadow: 0px 0px 20px rgb(0 0 0 / 25%);
