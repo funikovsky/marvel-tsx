@@ -7,11 +7,19 @@ const SceletonBlock = styled.div`
   width: 425px;
   height: 763px;
   box-shadow: 0px 0px 20px rgb(0 0 0 / 25%);
+  div {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    padding: 25px;
+  }
 `;
 
 export const SceletonCharDescr = () => {
   return (
     <SceletonBlock>
+      <div>Please select a character to see information</div>
       <ContentLoader
         speed={2}
         width={425}
