@@ -4,17 +4,15 @@ import { ApiResponse } from './types';
 import { apiMain } from './config';
 
 const getCharsList = async (offSet: string = _offSet.toString()) => {
-  const res: AxiosResponse<ApiResponse['getCharsList']> = await apiMain.get(
+  const res: AxiosResponse<ApiResponse> = await apiMain.get(
     `characters?limit=9&offset=${offSet}&${_apiKey}`,
   );
-
+  console.log(res);
   return res.data;
 };
 
 const getCharItem = async (id: number) => {
-  const res: AxiosResponse<ApiResponse['getCharsList']> = await apiMain.get(
-    `characters/${id}?${_apiKey}`,
-  );
+  const res: AxiosResponse<ApiResponse> = await apiMain.get(`characters/${id}?${_apiKey}`);
 
   return res.data;
 };

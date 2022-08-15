@@ -1,22 +1,24 @@
 import { FC } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { StyledHeader } from './StyledHeader';
+import { StyledLink } from './StyledLink';
 
 export const Header: FC = () => {
   return (
     <StyledHeader>
       <h1>
-        <a href="/">
+        <Link to="/">
           <span>Marvel</span> information portal
-        </a>
+        </Link>
       </h1>
       <nav>
         <ul>
           <li>
-            <a href="/">Characters</a>
+            <StyledLink to="/">Characters</StyledLink>
           </li>
           /
           <li>
-            <a href="/">Comics</a>
+            <StyledLink to="/comics">Comics</StyledLink>
           </li>
         </ul>
       </nav>

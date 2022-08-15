@@ -1,4 +1,4 @@
-import { FC, HtmlHTMLAttributes, MouseEventHandler } from 'react';
+import { FC } from 'react';
 import { useAppDispatch } from '../../hooks/hooks';
 import { getChar } from '../../redux/slices/asynkThunks/getChar';
 import { generateId } from '../../utils/utils';

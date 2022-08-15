@@ -16,8 +16,8 @@ export const ComicsList: FC<ComicsListProps> = ({ comics }) => {
       <Title fs="18px" lh="21px">
         Comics:
       </Title>
-      {comics.slice(0, 9).map((comic) => (
-        <ComicName>{comic.name}</ComicName>
+      {comics.slice(0, 9).map((comic, index) => (
+        <ComicName key={index}>{comic.name}</ComicName>
       ))}
     </GridBlock>
   );

@@ -1,9 +1,3 @@
-interface CharsResponse {
-  data: {
-    results: Array<CharsResponseItem>;
-  };
-}
-
 interface CharsUrlDetail {
   type: 'detail';
   url: string;
@@ -22,6 +16,7 @@ export interface CharsComicsItem {
 }
 
 type CharUrlItem = CharsUrlDetail | CharsUrlComicLink;
+
 interface CharsThumbnail {
   path: string;
   extension: string;
@@ -38,5 +33,7 @@ export interface CharsResponseItem {
 }
 
 export interface ApiResponse {
-  getCharsList: CharsResponse;
+  data: {
+    results: Array<CharsResponseItem>;
+  };
 }
