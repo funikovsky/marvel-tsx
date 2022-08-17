@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { _defaultNumberChar } from '../../common/variables';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { getChars } from '../../redux/slices/asynkThunks/getChars';
@@ -7,7 +8,7 @@ import { ButtonBlock } from '../ButtonBlock';
 import { CharItem } from '../CharItem';
 import { GridBlock } from '../GridBlock';
 
-export const CharList = () => {
+export const CharList: FC = () => {
   const { dataChar, offset } = useAppSelector((state) => state.char);
   const dispatch = useAppDispatch();
 

@@ -1,4 +1,5 @@
 import { useAppSelector } from '../../hooks/hooks';
+import { isNoImg } from '../../utils/utils';
 import { Button } from '../Button';
 import { CharIcon } from '../CharItem/CharIcon';
 import { GridBlock } from '../GridBlock';
@@ -11,7 +12,7 @@ export const DescrCharInfo = () => {
     const { homepage, thumbnail, wiki, name } = selectedChar;
     return (
       <GridBlock col="150px minmax(101px, auto)" rows="minmax(150px, auto)" col_gap="25px">
-        <CharIcon w="150px" h="150px">
+        <CharIcon w="150px" h="150px" noImg={isNoImg(thumbnail)}>
           <img src={thumbnail} alt="char" />
         </CharIcon>
         <div>

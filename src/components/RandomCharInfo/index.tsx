@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { second_color } from '../../common/variables';
 import { useAppSelector } from '../../hooks/hooks';
 import { ICharItem } from '../../redux/slices/charSlice';
+import { isNoImg } from '../../utils/utils';
 import { Button } from '../Button';
 import { CharIcon } from '../CharItem/CharIcon';
 
@@ -29,7 +30,7 @@ export const RandomCharInfo: FC<RandomCharInfoProps> = ({ randomChar }) => {
 
   return (
     <StyledRandomCharInfo>
-      <CharIcon w="180px" h="180px">
+      <CharIcon noImg={isNoImg(thumbnail)} w="180px" h="180px">
         <img src={thumbnail} />
       </CharIcon>
       <GridBlock col="265px" rows="26px 90px 38px" row_gap="13px">

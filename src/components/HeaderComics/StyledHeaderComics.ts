@@ -6,4 +6,6 @@ export const StyledHeaderComics = styled.div`
   width: 1100px;
   height: 100px;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 45px;
 `;

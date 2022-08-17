@@ -13,3 +13,7 @@ export const transformChar = (char: CharsResponseItem) => ({
 export const generateId = () => {
   return Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
 };
+
+export const isNoImg = (thumbnail: string) => {
+  return thumbnail.includes('image_not_available');
+};
