@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/marvel-tsx/static/js/main.cd0949ab.js",
+    "main.js": "/marvel-tsx/static/js/main.7c768faa.js",
     "index.html": "/marvel-tsx/index.html",
-    "main.cd0949ab.js.map": "/marvel-tsx/static/js/main.cd0949ab.js.map"
+    "main.7c768faa.js.map": "/marvel-tsx/static/js/main.7c768faa.js.map"
   },
   "entrypoints": [
-    "static/js/main.cd0949ab.js"
+    "static/js/main.7c768faa.js"
   ]
 }
