@@ -16,7 +16,7 @@ export const ComicItem: FC<ComicItemProps> = ({ title, prices, images, url }) =>
       <CharIcon w="225px" h="346px">
         <a href={url}>
           <img
-            src={images.length ? `${images[0].path}.${images[0].extension}` : '/asset/img/UW.png'}
+            src={images.length ? `${images[0].path}.${images[0].extension}` : 'asset/img/UW.png'}
             alt="comicImg"
           />
         </a>
