@@ -6,11 +6,11 @@ export const HeaderComics = () => {
   return (
     <StyledHeaderComics>
       <CharIcon w="152px">
-        <img src="/asset/img/Avengers.png" alt="Avengers" />
+        <img src="../../asset/img/Avengers.png" alt="Avengers" />
       </CharIcon>
       <HeaderComicsText>New comics every week! Stay tuned!</HeaderComicsText>
       <CharIcon w="133px">
-        <img src="/asset/img/Avengers logo.png" alt="Avengers" />
+        <img src="../../asset/img/Avengers logo.png" alt="Avengers" />
       </CharIcon>
     </StyledHeaderComics>
   );

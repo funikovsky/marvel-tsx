@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/marvel-tsx" element={<MainPages />} />
-          <Route path="/comics" element={<ComicsPages />} />
+          <Route path="/marvel-tsx/comics" element={<ComicsPages />} />
         </Routes>
       </Wrapper>
     </>
