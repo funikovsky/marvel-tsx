@@ -11,7 +11,7 @@ function App() {
       <Wrapper>
         <Header />
         <Routes>
-          <Route path="/" element={<MainPages />} />
+          <Route path="/marvel-tsx" element={<MainPages />} />
           <Route path="/comics" element={<ComicsPages />} />
         </Routes>
       </Wrapper>
