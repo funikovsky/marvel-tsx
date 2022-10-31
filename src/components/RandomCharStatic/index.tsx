@@ -11,7 +11,7 @@ export const RandomCharStatic: FC = () => {
 
   return (
     <StyledRandomCharStatic>
-      <img src="/asset/img/Decoration.png" alt="decor" />
+      <img src="../../asset/img/Decoration.png" alt="decor" />
       <div>
         <p>Random character for today! Do you want to get to know him better?</p>
       </div>
