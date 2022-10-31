@@ -53,11 +53,10 @@ export const CharSlice: Slice<ICharState, SliceCaseReducers<ICharState>, string>
     builder
       .addMatcher(isAnyOf(getChars.pending), (state, action) => {
         state.charsLoading = 'loading';
-        console.log('pending');
       })
       .addMatcher(isAnyOf(getChars.fulfilled), (state, action) => {
         state.charsLoading = 'success';
-        console.log('fulfilled');
+
         state.dataChar = [...state.dataChar, ...action.payload];
       })
       .addMatcher(isAnyOf(getChars.rejected), (state, action) => {
@@ -66,11 +65,10 @@ export const CharSlice: Slice<ICharState, SliceCaseReducers<ICharState>, string>
       })
       .addMatcher(isAnyOf(getChar.pending), (state, action) => {
         state.randomCharLoading = 'loading';
-        console.log('pending');
       })
       .addMatcher(isAnyOf(getChar.fulfilled), (state, action) => {
         state.randomCharLoading = 'success';
-        console.log('fulfilled');
+
         state.dataRandomChar = action.payload;
       })
       .addMatcher(isAnyOf(getChar.rejected), (state, action) => {

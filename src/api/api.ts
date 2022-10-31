@@ -7,7 +7,7 @@ const getCharsList = async (offSet: string = _offSet.toString()) => {
   const res: AxiosResponse<ApiResponse> = await apiMain.get(
     `characters?limit=9&offset=${offSet}&${_apiKey}`,
   );
-  console.log(res);
+
   return res.data;
 };
 
